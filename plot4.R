@@ -3,13 +3,11 @@ source("load.R")
 ### Plot 4
 def.par <- par(no.readonly = TRUE)
 
-#png(filename = "plot4.png", width = 480, height = 480)
+png(filename = "plot4.png", width = 480, height = 480)
 
 Sys.setlocale("LC_TIME", "USA")
 
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 2))
-
-#split.screen( c(2,2) )
 
 #screen(1)
 with(hpc2007, plot(datetime, Global_active_power, type="l", ylab="Global Active Power", xlab="") )
@@ -26,7 +24,5 @@ legend("topright", col = c("black", "red", "blue"), legend = c("Sub_metering_1",
 #screen(4)
 with(hpc2007, plot(datetime, Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime") )
 
-#close.screen(all = TRUE)
-
-#dev.off()
+dev.off()
 par(def.par)
